@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <section class="questions">
+        <p>
+            {% if question.questions is defined %}
+                {{ question.questions }}
+            {% else %}
+                Bienvenue sur Night Games
+            {% endif %}
+        </p>
+
+
+        <div class="boutons">
+            <a class="precedent" href="#"><i class="fas fa-arrow-left"></i><span>Précédent</span></a>
+            <a class="signaler" href="#"><i class="fas fa-exclamation-triangle"></i><span>Signaler</span></a>
+            <a class="suivant" href="/questions/{{ random(0,100) }}"><i class="fas fa-arrow-right"></i><span>Suivant</span></a>
+        </div>
+    </section>
+{% endblock %}

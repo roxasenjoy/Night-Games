@@ -1,0 +1,189 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+:root{
+    --black: #262626;
+    --red: #EC4510;
+    --yellow: #ECB910;
+    --blue : #108DEC;
+    --white: #F2F2F2;
+}
+
+body{
+    background-color: var(--black);
+}
+
+                /**********************
+                    Version téléphone
+                ***********************/
+
+    /* Header */
+    header{
+        border-bottom: 2px solid var(--white);
+        width: 100%;
+        color:var(--white);
+    }
+        /* Logo */
+        .logo{
+            font-size: 50px ;
+            font-family: "Segoe UI Light", "Segoe UI";
+            text-align: center;
+            padding: 20px;
+        }
+
+    /* Questions */
+    .questions{
+        width: 65%;
+        margin: 15em auto 0 auto;
+        text-align: center;
+        color:var(--white);
+    }
+
+        /* Question */
+        .questions p{
+            font-size: 30px ;
+            font-family: "Roboto Light", "Segoe UI";
+
+        }
+
+    /* Boutons */
+    .boutons{
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+            /* Tous les boutons */
+            .boutons a{
+                width: 100px;
+                height: 75px;
+                border-radius: 5px;
+                font-size: 25px;
+                padding: 15px 30px 15px 30px;
+                font-weight: 500;
+                color:var(--white);
+                text-decoration: none;
+            }
+
+                .boutons a i {
+                    display: none;
+                    color:var(--white);
+                }
+
+                /* Titre des boutons */
+                .boutons .precedent{
+                    background-color: var(--red);
+                }
+
+                .boutons .signaler{
+                    background-color: var(--yellow);
+                    margin: 0 10%;
+                }
+
+                .boutons .suivant{
+                    background-color: var(--blue);
+                }
+
+    /* Footer */
+    footer{
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 5px 30px 50px var(--white);
+        color:var(--white);
+    }
+
+        /* Copyright */
+        footer h2{
+            font-size: 15px;
+            font-family: "Roboto Thin", "Roboto Light", sans-serif, "Comic Sans MS";
+            font-weight: 200;
+            padding:20px 0;
+
+        }
+
+        footer a{
+            color:var(--white);
+            text-decoration: none;
+        }
+
+
+
+@media(max-width: 1450px){
+    /* Header */
+
+        /* Logo */
+
+    /* Questions */
+    .questions{
+        width: 65%;
+        margin: 12.5em auto 0 auto;
+    }
+        /* Question */
+
+        /* Boutons */
+        .boutons .signaler{
+            margin: 0 5%;
+        }
+        
+
+    /* Footer */
+
+        /* Copyright */
+}
+
+@media  (max-width: 768px) {
+
+    /* Header */
+
+        /* Logo */
+
+    /* Questions */
+    .questions{
+        width: 90%;
+        margin: 12.5em auto 0 auto;
+    }
+        /* Question */
+
+        /* Boutons */
+        .boutons a i {
+            display: initial;
+        }
+
+        .boutons a span{
+            display: none;
+        }
+
+
+    /* Footer */
+
+    /* Copyright */
+
+}
+
+@media  (max-width: 365px) {
+
+    /* Header */
+
+        /* Logo */
+
+    /* Questions */
+    .questions{
+        width: 90%;
+        margin: 7em auto 0 auto;
+        text-align: center;
+    }
+        /* Question */
+
+        /* Boutons */
+
+    /* Footer */
+
+        /* Copyright */
+
+}
+

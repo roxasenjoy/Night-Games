@@ -1,0 +1,22 @@
+
+    {{ form_start(form) }}
+        <table class="table table-sm table-fixed table-hover mt-1 mb-2">
+            <thead>
+                <tr>
+                    <th class="add_questions_admin">{{ form_label(form.questions) }}</th>
+                    <th>{{ form_label(form.theme) }}</th>
+                    <th class="theme"> {{ form_label(form.likes) }}</th>
+                    <th class="theme">{{ form_label(form.dislikes) }}</th>
+                    <th><label>Actions</label></th>
+                </tr>
+            </thead>
+            <tbody>
+                <td class="add_questions_admin"> {{ form_widget(form.questions) }}</td>
+                <td> {{ form_widget(form.theme) }}</td>
+                <td class="theme"> {{ form_widget(form.likes) }}</td>
+                <td class="theme"> {{ form_widget(form.dislikes) }}</td>
+                <td><button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button> </td>
+            </tbody>
+        </table>
+    {{ form_end(form) }}
+

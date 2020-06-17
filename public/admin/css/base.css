@@ -1,0 +1,101 @@
+
+/***************************
+    Affichage des questions
+****************************/
+    li{
+        border-right: solid white 0.1px;
+    }
+
+    /* Paramètre */
+    .action{
+        display: flex;
+        flex-grow: 2;
+
+    }
+
+        .action a{
+            padding: 6px 12px;
+
+            margin:auto;
+            margin-right: 10px;
+        }
+
+
+    /* Mise à jour */
+    .update{
+        display: initial;
+    }
+
+    /* Mise à jour responsive */
+    .update_responsive{
+        display: none;
+    }
+
+    td button{
+        width: 100%;
+    }
+
+    /********************
+         Pagination
+     ********************/
+    .pagination{
+        font-size: 24px;
+        margin: auto;
+    }
+
+    .pagination .pagination a {
+        color: #262626;
+        text-decoration: none;
+    }
+
+    .pagination .pagination .current{
+        color: #108DEC;
+        border-bottom: #108DEC solid 2px;
+        text-decoration: none;
+    }
+
+/***************************
+    Création d'une question
+****************************/
+
+
+@media (max-width: 1000px){
+
+    /***************************
+        Affichage des questions
+    ****************************/
+    table{
+        table-layout:fixed;
+    }
+
+    li{
+        border-right: none;
+    }
+    /* Mise à jour */
+    .update{
+        display: none;
+    }
+    /* Mise à jour responsive */
+    .update_responsive{
+        display: initial;
+    }
+
+    /* Taille du champ questions */
+    .questions_admin, .add_questions_admin{
+        width: 50%;
+    }
+
+
+}
+
+@media (max-width:750px){
+
+    /* Affichage des champs essentiels */
+    .id, .theme, .likes, .dislikes {
+        display: none;
+    }
+    /* Taille du champ questions */
+    .questions_admin{
+        width: 75%;
+    }
+}

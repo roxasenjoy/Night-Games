@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form "questions/switch.html.twig" %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/admin/css/base.css"/>
+{% endblock %}
+
+
+
+{% block header %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
+            <a class="navbar-brand title">ADMIN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white" ></i>
+            </button>
+            <div class="collapse navbar-collapse text-white" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('home') }}">Version utilisateur</a>
+                    </li>
+
+                    <li class="nav-item update_responsive">
+                        <a class="nav-link text-white" href="{{ path('update') }}">Mise à jour</a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <span class="navbar-text update">
+               <a class="text-white" href="{{ path('update') }}"> Mise à jour </a>
+            </span>
+        </nav>
+    </header>
+
+{% endblock %}
+
+{% block content %}
+    <div>
+        {{ form_start(form) }}
+
+            {{ form_row(form.questions) }}
+
+            <table class="table table-sm table-fixed table-hover mt-1 mb-2">
+                <thead>
+                <tr>
+                    <th class="add_questions_admin"></th>
+                    <th>{{ form_label(form.theme) }}</th>
+                    <th class="theme"> {{ form_label(form.likes) }}</th>
+                    <th class="theme">{{ form_label(form.dislikes) }}</th>
+                    <th><label>Actions</label></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <td class="add_questions_admin"> </td>
+                    <td> {{ form_widget(form.theme) }}</td>
+                    <td class="theme"> {{ form_widget(form.likes) }}</td>
+                    <td class="theme"> {{ form_widget(form.dislikes) }}</td>
+                <td><button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button> </td>
+                </tbody>
+            </table>
+        {{ form_end(form) }}
+
+
+
+        <table class="table table-striped table-sm table-fixed table-hover">
+            <thead>
+            <tr>
+                <th scope="col" class="id">ID</th>
+                <th scope="col" class="questions_admin">Questions</th>
+                <th scope="col" class="theme text-center">Thème</th>
+                <th scope="col" class="likes text-center">Likes</th>
+                <th scope="col" class="dislikes text-center">Dislikes</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for question in questions %}
+                <tr>
+                    <th class="id" scope="row">{{ question.id }}</th>
+                    <td class="questions_admin"> <div style="overflow:auto; width:100%">{{ question.questions }}</div></td>
+                    <td class="theme text-center"> {{ question.theme }}</td>
+                    <td class="likes text-center"> {{ question.likes }}</td>
+                    <td class="dislikes text-center"> {{ question.dislikes }}</td>
+                    <td class="action text-center">
+                        <a class="bg-warning text-white rounded" href="{{ path('questions_edit', {'id': question.id}) }}">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                        {{ include('questions/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucune question disponible.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+            {{ knp_pagination_render(questions) }}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
+
+
+

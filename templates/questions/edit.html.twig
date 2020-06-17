@@ -1,0 +1,15 @@
+{% extends 'questions/index.html.twig' %}
+
+{% block content %}
+    <div class="text-center">
+        <h1 class="text-center mt-2 mb-2">Édition</h1>
+
+        {{ include('questions/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <a href="{{ path('questions_index') }}">Retour à la liste</a>
+    </div>
+
+{% endblock %}
+
+
+
